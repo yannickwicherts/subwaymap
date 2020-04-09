@@ -1,0 +1,282 @@
+html{
+    min-height:100%;
+}
+body{
+    background:#3b3838;
+    color:#fff;
+    margin:0;
+    height:100%;
+    font-family:Roboto,Arial,SansSerif;
+    font-size:16px;
+}
+.subwaymapwrapper{
+    padding:80px 40px 40px;
+    box-sizing:border-box;
+}
+.subwaymapwrapper .alphacomm-logo{
+    background:url('../img/alphacomm-logo.png') no-repeat left top;
+    background-size:contain;
+    position:absolute;
+    right:40px;
+    bottom:40px;
+    width:15%;
+}
+.subwaymapwrapper .alphacomm-logo .inner{
+    padding-top:39%;
+}
+.subwaymap{
+    margin:0 auto;
+    max-width:1600px;
+}
+.subwaymap .map{
+    display:inline-block;
+    vertical-align:top;
+    width:90%;
+}
+.subwaymap .map .inner{
+    background:url('../img/transmap.png') no-repeat left top;
+    background-size:100% auto;
+    padding-top:52.867%;
+    height:0;
+    position:relative;
+}
+.subwaymap .map .line{
+    background:no-repeat left top;
+    background-size:100% auto;
+    padding-top:52.867%;
+    height:0;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.subwaymap .legend{
+    display:inline-block;
+    vertical-align:top;
+    width:10%;
+}
+.subwaymap .legend .inner{
+    background:url('../img/legend.png') no-repeat left top;
+    background-size:100% auto;
+    padding-top:75%;
+}
+.subwaymap .settings{
+    padding:10px 0 0;
+}
+.subwaymap .settings p{
+    margin:0 0 5px;
+}
+.subwaymap .settings select{
+    margin:0 0 15px;
+}
+.subwaymapwrapper .overlay{
+    background:rgba(0,0,0,0.5);
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:none;
+}
+.subwaymapwrapper .message{
+    background:#fff;
+    color:#000;
+    padding:20px;
+    box-sizing:border-box;
+    width:25%;
+    height:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+}
+.subwaymapwrapper .message h2{
+    font-weight:700;
+    font-size:20px;
+    margin:0 0 15px;
+}
+.subwaymap .map .messages{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.subwaymap .map .messages > div{
+    position:absolute;
+    cursor:pointer;
+}
+.subwaymap .map .messages .start1{
+    left:7.6%;
+    top:-0.2%;
+    width:9.2%;
+    height:2.3%;
+}
+.subwaymap .map .messages .start2{
+    left:10.9%;
+    top:6%;
+    width:10.4%;
+    height:2.3%;
+}
+.subwaymap .map .messages .tech1{
+    left:28.5%;
+    top:7.5%;
+    width:8.1%;
+    height:3.9%;
+}
+.subwaymap .map .messages .tech2{
+    left:50.6%;
+    top:14.4%;
+    width:7.2%;
+    height:3.9%;
+}
+.subwaymap .map .messages .tech3{
+    left:54.2%;
+    top:50.2%;
+    width:12%;
+    height:3.9%;
+}
+.subwaymap .map .messages .voice1{
+    left:22.5%;
+    top:24.1%;
+    width:6.8%;
+    height:2.3%;
+}
+.subwaymap .map .messages .voice2{
+    left:37.2%;
+    top:25.7%;
+    width:8.3%;
+    height:2.3%;
+}
+.subwaymap .map .messages .voice2{
+    left:37.2%;
+    top:25.7%;
+    width:8.3%;
+    height:2.3%;
+}
+.subwaymap .map .messages .voice3{
+    left:41.3%;
+    top:34.1%;
+    width:8.3%;
+    height:2.3%;
+}
+.subwaymap .map .messages .voice4{
+    left:45.6%;
+    top:39%;
+    width:4.9%;
+    height:4.6%;
+}
+.subwaymap .map .messages .voice5{
+    left:40.9%;
+    top:62.7%;
+    width:6.7%;
+    height:4.6%;
+}
+.subwaymap .map .messages .sms1{
+    left:28.9%;
+    top:41.6%;
+    width:6.7%;
+    height:2.3%;
+}
+.subwaymap .map .messages .sms2{
+    left:33%;
+    top:49.4%;
+    width:8.3%;
+    height:2.3%;
+}
+.subwaymap .map .messages .sms3{
+    left:37.2%;
+    top:57.4%;
+    width:9.2%;
+    height:2.3%;
+}
+.subwaymap .map .messages .email1{
+    left:15.8%;
+    top:40.6%;
+    width:8%;
+    height:4.6%;
+}
+.subwaymap .map .messages .email2{
+    left:18.8%;
+    top:52.3%;
+    width:10.8%;
+    height:3.9%;
+}
+.subwaymap .map .messages .email3{
+    left:24.7%;
+    top:62.8%;
+    width:8%;
+    height:4.6%;
+}
+.subwaymap .map .messages .email4{
+    left:30.6%;
+    top:76.2%;
+    width:10%;
+    height:2.3%;
+}
+.subwaymap .map .messages .paylink1{
+    left:0;
+    top:53%;
+    width:9.3%;
+    height:3.9%;
+}
+.subwaymap .map .messages .paylink2{
+    left:1.6%;
+    top:82.8%;
+    width:8.1%;
+    height:3.9%;
+}
+.subwaymap .map .messages .paylink3{
+    left:6.9%;
+    top:95.6%;
+    width:9.4%;
+    height:3.9%;
+}
+.subwaymap .map .messages .paylink4{
+    left:24.1%;
+    top:96%;
+    width:10.4%;
+    height:2.3%;
+}
+.subwaymap .map .messages .paylink5{
+    left:37.3%;
+    top:96%;
+    width:7.2%;
+    height:3.9%;
+}
+.subwaymap .map .messages .end1{
+    left:55.9%;
+    top:91.3%;
+    width:10%;
+    height:2.3%;
+}
+.subwaymap .map .messages .end2{
+    left:79.6%;
+    top:82.6%;
+    width:6%;
+    height:2.3%;
+}
+.subwaymap .map .messages .end3{
+    left:79.6%;
+    top:73.1%;
+    width:7.3%;
+    height:2.3%;
+}
+.subwaymap .map .messages .end4{
+    left:79.6%;
+    top:60.6%;
+    width:5.8%;
+    height:2.3%;
+}
+.subwaymap .map .messages .end5{
+    left:80.9%;
+    top:47.8%;
+    width:4.2%;
+    height:2.3%;
+}
+.subwaymap .map .messages .end6{
+    left:86.3%;
+    top:25%;
+    width:3.7%;
+    height:3.9%;
+}

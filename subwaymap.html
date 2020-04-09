@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SubwayMap Alphacomm Reminders</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" >
+    <meta name="author" content="Alphacomm B.V." >
+    <link href="css/style.css" media="screen, print, projection" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900" media="screen, print, projection" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var subWayMap = {
+                lines: {
+                    start: {
+                        title: 'Startup',
+                        enabled: 1,
+                        1: {done: 1, title: 'Signed Agreement', message: 'Message Start'},
+                        2: {done: 0, title: 'Script & Settings Doc', message: ''}
+                    },
+                    tech: {
+                        title: 'Technical & Data',
+                        enabled: 1,
+                        1: {done: 1, title: 'Platform Access', message: 'Message Tech'},
+                        2: {done: 0, title: 'Data Exchange', message: ''},
+                        3: {done: 0, title: 'Test File or API Test Run', message: ''}
+                    },
+                    voice: {
+                        title: 'Voice',
+                        enabled: 1,
+                        1: {done: 1, title: 'Text Proposal', message: 'Message Voice'},
+                        2: {done: 1, title: 'Approval on Text', message: ''},
+                        3: {done: 1, title: 'Studio Recording', message: ''},
+                        4: {done: 1, title: 'Recording Approval', message: ''},
+                        5: {done: 1, title: 'Voice Configuration', message: ''}
+                    },
+                    sms: {
+                        title: 'SMS',
+                        enabled: 1,
+                        1: {done: 0, title: 'Text Proposal', message: 'Message SMS'},
+                        2: {done: 0, title: 'Approval on Text', message: ''},
+                        3: {done: 0, title: 'SMS Configuration', message: ''}
+                    },
+                    email: {
+                        title: 'E-Mail',
+                        enabled: 1,
+                        1: {done: 1, title: 'Text & Template Proposal', message: 'Message E-Mail'},
+                        2: {done: 1, title: 'DKIM & SPD records', message: ''},
+                        3: {done: 1, title: 'Text & Template Approval', message: ''},
+                        4: {done: 1, title: 'E-mail Configuration', message: ''}
+                    },
+                    paylink: {
+                        title: 'PayLink',
+                        enabled: 1,
+                        1: {done: 1, title: 'Template Proposal', message: 'Message Paylink'},
+                        2: {done: 1, title: 'Payment Details', message: ''},
+                        3: {done: 1, title: 'Template Approval', message: ''},
+                        4: {done: 0, title: 'Paylink Configuration', message: ''},
+                        5: {done: 0, title: 'Payment Tests', message: ''}
+                    },
+                    end: {
+                        title: 'Final Steps',
+                        enabled: 0,
+                        1: {done: 0, title: 'Configuration Ready', message: 'Message End'},
+                        2: {done: 0, title: 'Internal Test', message: ''},
+                        3: {done: 0, title: 'Customer Test', message: ''},
+                        4: {done: 0, title: 'Acceptance', message: ''},
+                        5: {done: 0, title: 'GO LIVE!', message: ''},
+                        6: {done: 0, title: 'Results', message: ''}
+                    }
+                }
+            };
+            for(var line in subWayMap['lines']){
+                var length = Object.keys(subWayMap['lines'][line.toString()]).length - 1;
+                var imageIndex = 0;
+                for (i = 1; i < length; i++) {
+                    imageIndex = imageIndex + parseInt(subWayMap['lines'][line.toString()][i.toString()]['done']);
+                    var lineName = subWayMap['lines'][line.toString()]['title'];
+                    var title = subWayMap['lines'][line.toString()][i.toString()]['title'];
+                    var message = subWayMap['lines'][line.toString()][i.toString()]['message'];
+                    if(message != ''){
+                        $('.subwaymap .messages').append('<div class="'+line+i.toString()+'" data-line="'+lineName+'" data-title="'+title+'" data-message="'+message+'"></div>');
+                    }
+                }
+                if(subWayMap['lines'][line.toString()]['enabled'] == 1){
+                    $('.subwaymap .line.'+line).css('background-image', 'url(\'img/'+line+imageIndex+'.png\')');
+                }
+            }
+            $('.subwaymap .messages').on('click', 'div', function(){
+                $('.overlay').show();
+                $('.message .inner').html('<h2>'+$(this).data('line')+': '+$(this).data('title')+'</h2><div>'+$(this).data('message')+'</div>');
+                $('.message').show('slide',{direction:'right'},250);
+            });
+            $('.overlay').click(function(){
+                $('.message').hide('slide',{direction:'right'},250);
+                $('.overlay').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="subwaymapwrapper">
+    <div class="subwaymap">
+        <div class="map">
+            <div class="inner">
+                <div class="line tech"></div>
+                <div class="line voice"></div>
+                <div class="line sms"></div>
+                <div class="line email"></div>
+                <div class="line paylink"></div>
+                <div class="line start"></div>
+                <div class="line end"></div>
+                <div class="messages"></div>
+            </div>
+        </div><div class="legend">
+            <div class="inner"></div>
+        </div>
+    </div>
+    <div class="alphacomm-logo"><div class="inner"></div></div>
+    <div class="overlay"></div>
+    <div class="message">
+        <div class="inner"></div>
+    </div>
+</div>
+</body>
+</html>
